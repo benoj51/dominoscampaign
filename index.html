@@ -12,12 +12,12 @@
     <!-- Chosen Palette: Modern Domino's (Base: #F7F5F2 Warm Off-White, Primary: #006491 Domino's Blue, Accent: #E31837 Domino's Red, Text: #1E293B Dark Slate) -->
     <!-- Application Structure Plan: The SPA uses a vertical, scroll-based sectional layout with a sticky navigation header. This structure was chosen to guide the user through the campaign's narrative logically: starting with the core creative concept, defining the audience, detailing the strategy, outlining the execution timeline, and finally presenting the success metrics. This thematic flow transforms the static report into an intuitive, story-driven experience, allowing stakeholders to either get a quick overview or dive deep into specific sections easily, which is more user-friendly than a paginated or text-heavy document. -->
     <!-- Visualization & Content Choices: 
-        - Report Info: Ad Campaign Script -> Goal: Inform/Engage -> Viz/Presentation: HTML/CSS Storyboard -> Interaction: Static Visual Narrative -> Justification: Visually breaks down the ad's core humorous concept, making it immediately understandable and memorable.
+        - Report Info: Ad Campaign Script -> Goal: Inform/Engage -> Viz/Presentation: HTML/CSS Storyboard with Carousel -> Interaction: Automatic cycling, manual previous/next buttons, navigation dots -> Justification: Provides a dynamic, engaging visual narrative for the ad concept, allowing users to easily understand the story sequence without overwhelming them with all panels at once. This enhances the "show, don't tell" aspect for a campaign concept.
         - Report Info: Target Audience Demographics (UK) -> Goal: Compare/Inform -> Viz/Presentation: Doughnut & Bar Charts (Chart.js) -> Interaction: Buttons to toggle text descriptions for different audience segments -> Justification: Provides a clear, quantitative comparison of audience segments, making complex demographic data highly digestible.
         - Report Info: Campaign Pillars -> Goal: Organise/Detail -> Viz/Presentation: Tabbed Interface -> Interaction: Clickable tabs to reveal detailed content for each pillar -> Justification: Organises the multi-faceted strategy into clean, digestible sections, preventing information overload and improving navigation.
         - Report Info: Phased Rollout Plan -> Goal: Show Change/Process -> Viz/Presentation: Vertical Timeline Diagram (HTML/CSS) -> Interaction: Static visual flow -> Justification: Clearly visualises the campaign's progression over time, making the project plan easy to follow.
-        - Report Info: Key Performance Indicators -> Goal: Inform/Summarise -> Viz/Presentation: KPI Dashboard Cards with progress bars -> Interaction: Static display of key metrics and targets -> Justification: Presents success metrics in a familiar, at-a-glance dashboard format, making goals clear and measurable.
-        - Library/Method: Chart.js for all charts, rendered on Canvas. Custom HTML/Tailwind for all diagrams and layouts.
+        - Report Info: Key Performance Indicators (including new AOV and Sides) -> Goal: Inform/Summarise -> Viz/Presentation: KPI Dashboard Cards with progress bars -> Interaction: Static display of key metrics and targets -> Justification: Presents success metrics in a familiar, at-a-glance dashboard format, making goals clear and measurable and easily incorporating new metrics.
+        - Library/Method: Chart.js for all charts, rendered on Canvas. Custom HTML/Tailwind for all diagrams and layouts, including the carousel.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
@@ -102,32 +102,25 @@
             <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Ad Concept: "She Doesn't Understand Me Like You Do"</h3>
                 <p class="text-gray-600 mb-6 max-w-2xl mx-auto">The campaign's anchor is a humorous and relatable TV spot that personifies pizza as the ultimate, understanding companion. Here's how the story unfolds.</p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-left">
-                    <div class="bg-[#F7F5F2] p-4 rounded-xl border border-gray-200">
-                        <div class="w-full h-32 bg-gray-300 rounded-lg mb-3"></div>
-                        <p class="text-sm text-gray-700">A man sits on his sofa, pizza on the coffee table. He's about to take a bite.</p>
+                
+                <div class="relative w-full max-w-xl mx-auto overflow-hidden rounded-2xl shadow-lg bg-[#F7F5F2] p-6">
+                    <div id="storyboard-image-container" class="w-full h-64 bg-gray-300 rounded-lg mb-4 flex items-center justify-center">
+                        <img id="storyboard-current-image" src="" alt="Campaign storyboard image" class="w-full h-full object-contain rounded-lg">
                     </div>
-                     <div class="bg-[#F7F5F2] p-4 rounded-xl border border-gray-200">
-                        <div class="w-full h-32 bg-gray-300 rounded-lg mb-3"></div>
-                        <p class="text-sm text-gray-700">He turns lovingly to the pizza box beside him.</p>
+                    <p id="storyboard-current-description" class="text-sm text-gray-700 text-center min-h-[40px] flex items-center justify-center"></p>
+
+                    <div id="storyboard-dots" class="absolute inset-x-0 bottom-2 flex justify-center space-x-2">
+                        <!-- Dots will be dynamically inserted here -->
                     </div>
-                     <div class="bg-[#F7F5F2] p-4 rounded-xl border border-gray-200">
-                        <div class="w-full h-32 bg-gray-300 rounded-lg mb-3"></div>
-                        <p class="text-sm text-gray-700">He sighs, "She doesn't understand me like you do."</p>
-                    </div>
-                     <div class="bg-[#F7F5F2] p-4 rounded-xl border border-gray-200">
-                        <div class="w-full h-32 bg-gray-300 rounded-lg mb-3"></div>
-                        <p class="text-sm text-gray-700">His wife walks in. "What's going on here?" she asks, suspicious.</p>
-                    </div>
-                     <div class="bg-[#F7F5F2] p-4 rounded-xl border border-gray-200">
-                        <div class="w-full h-32 bg-gray-300 rounded-lg mb-3"></div>
-                        <p class="text-sm text-gray-700">He panics, leaps over the sofa, and runs to her.</p>
-                    </div>
-                     <div class="bg-[#F7F5F2] p-4 rounded-xl border border-gray-200">
-                        <div class="w-full h-32 bg-gray-300 rounded-lg mb-3"></div>
-                        <p class="text-sm text-gray-700">"It's not what it looks like!" he exclaims. Cue the Domino's jingle.</p>
-                    </div>
+
+                    <button id="storyboard-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#006491]">
+                        &#10094;
+                    </button>
+                    <button id="storyboard-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#006491]">
+                        &#10095;
+                    </button>
                 </div>
+
             </div>
         </section>
 
@@ -180,7 +173,7 @@
 
                 <div class="p-4 md:p-6">
                     <div id="digital" class="tab-content">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">The "Pizza Perfect Match" Swipe Game</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">The 'Pizza Perfect Match' Swipe Game</h3>
                         <p class="text-gray-600 mb-4">A central, interactive swipe game within the Domino's app will allow users to 'swipe left' (dislike) or 'swipe right' (like) on various pizza ingredients, styles, and combinations. Each swipe builds a deeper understanding of the player's preferences, culminating in a highly personalised custom pizza recommendation – their "perfect match." If the custom suggestion isn't quite right, the game will then offer alternative pizzas from Domino's existing product range, tailored to the player's expressed likes and dislikes. This gamified approach offers a dynamic and intuitive way to discover personalised pizza choices.</p>
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
                             <li>Engaging swipe interface for intuitive preference selection.</li>
@@ -196,7 +189,7 @@
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
                             <li><strong>TikTok:</strong> Branded audio and food challenges (e.g., #MyPizzaMatch).</li>
                             <li><strong>Instagram:</strong> Visual UGC contests, interactive Stories, and Reels.</li>
-                            <li><strong>X (Twitter):</strong> Real-time engagement with trending topics and humorous commentary.</li>
+                            <li><strong>X (formerly Twitter):</strong> Real-time engagement with trending topics and humorous commentary.</li>
                             <li><strong>UGC Amplification:</strong> Promote hashtags and run giveaways to incentivise content creation.</li>
                         </ul>
                     </div>
@@ -288,7 +281,10 @@
                     <p class="text-gray-600 text-sm mb-4">Tracking the direct impact on revenue and orders.</p>
                      <div class="space-y-3">
                         <div class="text-sm"><span>Sales Uplift</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 10%"></div></div></div>
+                        <div class="text-sm"><span>Orders from Game Recommendations</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 5%"></div></div></div>
                         <div class="text-sm"><span>Deal Redemption Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 25%"></div></div></div>
+                        <div class="text-sm"><span>Increased Average Order Value</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 8%"></div></div></div>
+                        <div class="text-sm"><span>Increased Number of Sides Purchased</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 12%"></div></div></div>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
@@ -482,6 +478,83 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+
+    // Storyboard Carousel Logic
+    const storyboardData = [
+        { img: 'uploaded:1. A man sits on his sofa, pizza on the coffee table. He\'s about to take a bite..jpg-ff047070-61a1-4932-bdcb-3c9688149079', desc: "A man sits on his sofa, pizza on the coffee table. He's about to take a bite." },
+        { img: 'uploaded:2. He turns lovingly to the pizza box beside him..jpg-4c6cae4b-87c7-407e-aef3-a2a6de42348d', desc: "He turns lovingly to the pizza box beside him." },
+        { img: 'uploaded:3. He turns lovingly to the pizza box beside him..jpg-7d8fdf5b-55f5-4102-8b02-a7ca8bd93a32', desc: "He sighs, \"She doesn't understand me like you do.\"" },
+        { img: 'uploaded:4. His wife walks in. \"What\'s going on here?\" she asks, suspicious. .jpg-401c5ede-01bc-4723-ac68-0bb2cb59ea83', desc: "His wife walks in. \"What's going on here?\" she asks, suspicious." },
+        { img: 'uploaded:5. He panics, leaps over the sofa, and runs to her. .jpg-3d7d6163-4bff-4cfb-a146-32eb1361e1ee', desc: "He panics, leaps over the sofa, and runs to her." },
+        { img: 'uploaded:6. \"It\'s not what it looks like!\" he exclaims. Cue the Domino\'s jingle. .jpg-f6f640e7-294d-40a9-99be-b2b4d1354b3a', desc: "\"It's not what it looks like!\" he exclaims. Cue the Domino's jingle." }
+    ];
+
+    let currentStoryboardIndex = 0;
+    const storyboardImage = document.getElementById('storyboard-current-image');
+    const storyboardDescription = document.getElementById('storyboard-current-description');
+    const prevButton = document.getElementById('storyboard-prev');
+    const nextButton = document.getElementById('storyboard-next');
+    const storyboardDotsContainer = document.getElementById('storyboard-dots'); 
+
+    function updateStoryboard() {
+        // Construct the full image URL using the contentFetchId format
+        storyboardImage.src = storyboardData[currentStoryboardIndex].img;
+        storyboardDescription.textContent = storyboardData[currentStoryboardIndex].desc;
+        updateDots();
+    }
+
+    function nextStoryboard() {
+        currentStoryboardIndex = (currentStoryboardIndex + 1) % storyboardData.length;
+        updateStoryboard();
+    }
+
+    function prevStoryboard() {
+        currentStoryboardIndex = (currentStoryboardIndex - 1 + storyboardData.length) % storyboardData.length;
+        updateStoryboard();
+    }
+
+    function updateDots() {
+        storyboardDotsContainer.innerHTML = ''; // Clear existing dots
+        storyboardData.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('w-3', 'h-3', 'rounded-full', 'cursor-pointer', 'mx-1');
+            if (index === currentStoryboardIndex) {
+                dot.classList.add('bg-[#006491]'); // Active dot color
+            } else {
+                dot.classList.add('bg-gray-400'); // Inactive dot color
+            }
+            dot.addEventListener('click', () => {
+                currentStoryboardIndex = index;
+                updateStoryboard();
+                resetInterval(); // Reset interval when a dot is clicked
+            });
+            storyboardDotsContainer.appendChild(dot);
+        });
+    }
+
+    let storyboardInterval;
+    function startInterval() {
+        storyboardInterval = setInterval(nextStoryboard, 5000); // Cycle every 5 seconds
+    }
+
+    function resetInterval() {
+        clearInterval(storyboardInterval);
+        startInterval();
+    }
+
+    prevButton.addEventListener('click', () => {
+        prevStoryboard();
+        resetInterval(); // Reset interval on manual navigation
+    });
+    nextButton.addEventListener('click', () => {
+        nextStoryboard();
+        resetInterval(); // Reset interval on manual navigation
+    });
+
+    // Initial load and start cycling
+    updateStoryboard();
+    startInterval();
 
 });
 </script>
