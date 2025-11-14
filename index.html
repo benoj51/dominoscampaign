@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domino's: "Find Your Perfect Match" Campaign</title>
+    <title>QSR Brand: "Find Your Perfect Match" Campaign</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Modern Domino's (Base: #F7F5F2 Warm Off-White, Primary: #006491 Domino's Blue, Accent: #E31837 Domino's Red, Text: #1E293B Dark Slate) -->
-    <!-- Application Structure Plan: The SPA uses a vertical, scroll-based sectional layout with a sticky navigation header. This structure was chosen to guide the user through the campaign's narrative logically: starting with the core creative concept, defining the audience, detailing the strategy, outlining the execution timeline, and finally presenting the success metrics. This thematic flow transforms the static report into an intuitive, story-driven experience, allowing stakeholders to either get a quick overview or dive deep into specific sections easily, which is more user-friendly than a paginated or text-heavy document. -->
-    <!-- Visualization & Content Choices: 
-        - Report Info: Ad Campaign Script -> Goal: Inform/Engage -> Viz/Presentation: HTML/CSS Storyboard with Carousel -> Interaction: Automatic cycling, manual previous/next buttons, navigation dots -> Justification: Provides a dynamic, engaging visual narrative for the ad concept, allowing users to easily understand the story sequence without overwhelming them with all panels at once. This enhances the "show, don't tell" aspect for a campaign concept.
-        - Report Info: Target Audience Demographics (UK) -> Goal: Compare/Inform -> Viz/Presentation: Doughnut & Bar Charts (Chart.js) -> Interaction: Buttons to toggle text descriptions for different audience segments -> Justification: Provides a clear, quantitative comparison of audience segments, making complex demographic data highly digestible.
-        - Report Info: Campaign Pillars -> Goal: Organise/Detail -> Viz/Presentation: Tabbed Interface -> Interaction: Clickable tabs to reveal detailed content for each pillar -> Justification: Organises the multi-faceted strategy into clean, digestible sections, preventing information overload and improving navigation.
-        - Report Info: Phased Rollout Plan -> Goal: Show Change/Process -> Viz/Presentation: Vertical Timeline Diagram (HTML/CSS) -> Interaction: Static visual flow -> Justification: Clearly visualises the campaign's progression over time, making the project plan easy to follow.
-        - Report Info: Key Performance Indicators (including new AOV and Sides) -> Goal: Inform/Summarise -> Viz/Presentation: KPI Dashboard Cards with progress bars -> Interaction: Static display of key metrics and targets -> Justification: Presents success metrics in a familiar, at-a-glance dashboard format, making goals clear and measurable and easily incorporating new metrics.
-        - Library/Method: Chart.js for all charts, rendered on Canvas. Custom HTML/Tailwind for all diagrams and layouts, including the carousel.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- New Palette: Dynamic Energy (Base: #F7F5F2 Warm Off-White, Primary: #FF0099 Vibrant Magenta, Accent: #00BFFF Deep Sky Blue/Cyan, Text: #1E293B Dark Slate) -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -40,12 +30,12 @@
             }
         }
         .nav-link.active {
-            color: #E31837;
+            color: #FF0099; /* Vibrant Magenta */
             font-weight: 700;
-            border-bottom-color: #E31837;
+            border-bottom-color: #FF0099; /* Vibrant Magenta */
         }
         .tab-button.active {
-            background-color: #006491;
+            background-color: #00BFFF; /* Deep Sky Blue/Cyan */
             color: white;
         }
         .timeline-item::before {
@@ -68,7 +58,7 @@
             height: 1rem;
             width: 1rem;
             transform: translate(-50%, -50%);
-            border: 2px solid #006491;
+            border: 2px solid #00BFFF; /* Deep Sky Blue/Cyan */
         }
     </style>
 </head>
@@ -77,17 +67,17 @@
     <header id="header" class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-[#E31837] rounded-md flex items-center justify-center">
+                <div class="w-8 h-8 bg-[#FF0099] rounded-md flex items-center justify-center"> <!-- Vibrant Magenta -->
                     <div class="w-4 h-4 bg-white rounded-full"></div>
                 </div>
-                <h1 class="text-xl font-bold text-[#006491]">Domino's Campaign</h1>
+                <h1 class="text-xl font-bold text-[#00BFFF]">QSR Brand Campaign</h1> <!-- Deep Sky Blue/Cyan -->
             </div>
             <div class="hidden md:flex space-x-8">
-                <a href="#overview" class="nav-link text-gray-600 hover:text-[#E31837] border-b-2 border-transparent transition-colors duration-300">Overview</a>
-                <a href="#audience" class="nav-link text-gray-600 hover:text-[#E31837] border-b-2 border-transparent transition-colors duration-300">Audience</a>
-                <a href="#strategy" class="nav-link text-gray-600 hover:text-[#E31837] border-b-2 border-transparent transition-colors duration-300">Strategy</a>
-                <a href="#rollout" class="nav-link text-gray-600 hover:text-[#E31837] border-b-2 border-transparent transition-colors duration-300">Rollout</a>
-                <a href="#kpis" class="nav-link text-gray-600 hover:text-[#E31837] border-b-2 border-transparent transition-colors duration-300">KPIs</a>
+                <a href="#overview" class="nav-link text-gray-600 hover:text-[#FF0099] border-b-2 border-transparent transition-colors duration-300">Overview</a> <!-- Vibrant Magenta -->
+                <a href="#audience" class="nav-link text-gray-600 hover:text-[#FF0099] border-b-2 border-transparent transition-colors duration-300">Audience</a> <!-- Vibrant Magenta -->
+                <a href="#strategy" class="nav-link text-gray-600 hover:text-[#FF0099] border-b-2 border-transparent transition-colors duration-300">Strategy</a> <!-- Vibrant Magenta -->
+                <a href="#rollout" class="nav-link text-gray-600 hover:text-[#FF0099] border-b-2 border-transparent transition-colors duration-300">Rollout</a> <!-- Vibrant Magenta -->
+                <a href="#kpis" class="nav-link text-gray-600 hover:text-[#FF0099] border-b-2 border-transparent transition-colors duration-300">KPIs</a> <!-- Vibrant Magenta -->
             </div>
         </nav>
     </header>
@@ -95,13 +85,13 @@
     <main class="container mx-auto px-6 py-8 md:py-16">
 
         <section id="overview" class="mb-16 md:mb-24 text-center scroll-mt-20">
-            <h1 class="text-4xl md:text-6xl font-black text-[#006491] mb-4">Find Your Perfect Match</h1>
+            <h1 class="text-4xl md:text-6xl font-black text-[#FF0099] mb-4">Find Your Perfect Match</h1> <!-- Vibrant Magenta -->
             <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-8">
-                This section introduces the core concept of the campaign. It forges a deep, relatable connection between the satisfaction of discovering the ideal pizza and the universal search for a perfect partner. It's a humorous, digital-first strategy designed to boost loyalty, enhance the ordering experience, and drive sales.
+                This section introduces the core concept of the campaign. It forges a deep, relatable connection between the satisfaction of discovering the ideal meal and the universal search for a perfect partner. It's a humorous, digital-first strategy designed to boost loyalty, enhance the ordering experience, and drive sales.
             </p>
             <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Ad Concept: "She Doesn't Understand Me Like You Do"</h3>
-                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">The campaign's anchor is a humorous and relatable TV spot that personifies pizza as the ultimate, understanding companion. Here's how the story unfolds.</p>
+                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">The campaign's anchor is a humorous and relatable TV spot that personifies the QSR's core product as the ultimate, understanding companion. Here's how the story unfolds.</p>
                 
                 <div class="relative w-full max-w-xl mx-auto overflow-hidden rounded-2xl shadow-lg bg-[#F7F5F2] p-6">
                     <div id="storyboard-image-container" class="w-full h-64 bg-gray-300 rounded-lg mb-4 flex items-center justify-center">
@@ -113,10 +103,10 @@
                         <!-- Dots will be dynamically inserted here -->
                     </div>
 
-                    <button id="storyboard-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#006491]">
+                    <button id="storyboard-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#00BFFF]"> <!-- Deep Sky Blue/Cyan -->
                         &#10094;
                     </button>
-                    <button id="storyboard-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#006491]">
+                    <button id="storyboard-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#00BFFF]"> <!-- Deep Sky Blue/Cyan -->
                         &#10095;
                     </button>
                 </div>
@@ -124,21 +114,77 @@
             </div>
         </section>
 
-        <section id="audience" class="mb-16 md:mb-24 scroll-mt-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#006491]">Understanding the Audience</h2>
+        <section id="strategy" class="mb-16 md:mb-24 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#FF0099]">Campaign Strategy Pillars</h2> <!-- Vibrant Magenta -->
             <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">
-                This section breaks down the demographics and psychographics of our target segments. The campaign is designed to resonate with Domino's core UK customers while strategically capturing the attention of adjacent audiences during key cultural moments. Use the buttons to explore each segment and see how the data visualisations reflect the core audience.
+               This section details the campaign's strategic foundation, built on four key pillars designed to work in synergy. This integrated approach ensures we engage customers across multiple touchpoints. Use the tabs below to explore each pillar, from interactive digital experiences to high-impact seasonal partnerships.
+            </p>
+            <div class="bg-white rounded-2xl shadow-lg p-2 md:p-4">
+                <div class="flex flex-col sm:flex-row mb-4 border-b border-gray-200">
+                    <button data-tab="digital" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg active">Digital & Swipe Game</button>
+                    <button data-tab="social" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg">Social & UGC</button>
+                    <button data-tab="partnerships" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg">Partnerships</button>
+                    <button data-tab="promotions" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg">Promotions</button>
+                </div>
+
+                <div class="p-4 md:p-6">
+                    <div id="digital" class="tab-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">The 'Perfect Match' Swipe Game (In-App)</h3>
+                        <p class="text-gray-600 mb-4">A central, interactive swipe game within the QSR's mobile app allows users to 'swipe left' (dislike) or 'swipe right' (like) on various meal components, sides, and deals. The goal is to shift focus from product to finding the **'perfect deal'** or **'perfect occasion meal'** for the user. This gamified approach drives valuable first-party data collection used by the CRM team.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Engaging swipe interface for intuitive preference selection.</li>
+                            <li>Learns player preferences to suggest custom meal combinations or bundled deals.</li>
+                            <li>Data feeds into CRM (The Platform) to drive cross-selling campaigns (e.g., sides, desserts).</li>
+                            <li>Data used for fun, personalised in-app messages (e.g., "Our most unliked topping is X!").</li>
+                        </ul>
+                    </div>
+                    <div id="social" class="tab-content hidden">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Social Media & User-Generated Content</h3>
+                        <p class="text-gray-600 mb-4">We will leverage the QSR's strong social presence with platform-specific content that encourages participation and sharing. The focus is on humour, relatability, and amplifying authentic user content.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>**TikTok:** Branded audio and food challenges (e.g., #MyPerfectMatchDeal).</li>
+                            <li>**Instagram:** Visual UGC contests and interactive Reels.</li>
+                            <li>**X (formerly Twitter):** Real-time engagement with trending topics and humorous commentary.</li>
+                            <li>**UGC Amplification:** Promote hashtags and run giveaways to incentivise content creation.</li>
+                        </ul>
+                    </div>
+                    <div id="partnerships" class="tab-content hidden">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Seasonal Integration & Partnerships</h3>
+                        <p class="text-gray-600 mb-4">The campaign will tap into major cultural moments to maximise relevance and reach, aligning with the "servicing occasions" goal.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>**Major Summer TV Event (e.g., Love Island):** TV idents using the ad concept, real-time social commentary on show drama, and thematic challenges to engage the active audience.</li>
+                            <li>**Seasonal Romance Day (e.g., Valentine's Day):** A dual approach with "Perfect Pair" meal deals for couples and "Self-Love" comfort packs for the singles market.</li>
+                        </ul>
+                    </div>
+                    <div id="promotions" class="tab-content hidden">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Promotional Offers & Loyalty Integration</h3>
+                        <p class="text-gray-600 mb-4">Tailored promotions will incentivise trial and drive sales, while integration with the Loyalty Programme will encourage repeat purchases and build long-term retention, particularly focusing on **Average Order Value (AOV)**.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>**"Perfect Match" Meal Deals:** Tiered bundles focused on adding high-margin items (sides/desserts).</li>
+                            <li>**Exclusive Discounts:** Offers for orders placed via the Swipe Game to encourage adoption.</li>
+                            <li>**Loyalty Perks:** Double points for campaign-related orders; gamification integrated by Beth's team into the Loyalty Programme.</li>
+                            <li>**Gamified Offers:** Upsell prompts designed to increase side purchases at checkout.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="audience" class="mb-16 md:mb-24 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#00BFFF]">Understanding the Audience</h2> <!-- Deep Sky Blue/Cyan -->
+            <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">
+                This section breaks down the demographics and psychographics of our target segments. The campaign is designed to resonate with the QSR's core UK customers while strategically capturing the attention of adjacent audiences during key cultural moments. Use the buttons to explore each segment and see how the data visualisations reflect the core audience.
             </p>
             <div class="grid md:grid-cols-5 gap-8 items-start">
                 <div class="md:col-span-3 bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                    <h3 id="audience-title" class="text-2xl font-bold mb-4 text-gray-800">Domino's Core UK Audience</h3>
+                    <h3 id="audience-title" class="text-2xl font-bold mb-4 text-gray-800">QSR Core UK Audience</h3>
                     <div id="audience-description" class="text-gray-600 space-y-3">
                         <p>The primary target consists of digital natives aged 18-34 who value convenience, speed, and satisfying meal options. UK-specific data reveals a significant male majority (79.8%), making the proposed ad's male protagonist highly relatable. They are often habitual buyers or impulse purchasers driven by app notifications and discounts.</p>
                     </div>
                      <div class="mt-6 flex flex-wrap gap-2">
-                        <button data-audience="core" class="audience-button bg-[#006491] text-white py-2 px-4 rounded-full text-sm font-semibold shadow">Core Audience</button>
-                        <button data-audience="loveisland" class="audience-button bg-white text-[#006491] py-2 px-4 rounded-full text-sm font-semibold border border-[#006491] hover:bg-gray-100">Love Island Viewers</button>
-                        <button data-audience="valentines" class="audience-button bg-white text-[#006491] py-2 px-4 rounded-full text-sm font-semibold border border-[#006491] hover:bg-gray-100">Valentine's Day Consumers</button>
+                        <button data-audience="core" class="audience-button bg-[#00BFFF] text-white py-2 px-4 rounded-full text-sm font-semibold shadow">Core Audience</button> <!-- Deep Sky Blue/Cyan -->
+                        <button data-audience="loveisland" class="audience-button bg-white text-[#00BFFF] py-2 px-4 rounded-full text-sm font-semibold border border-[#00BFFF] hover:bg-gray-100">Major TV Viewers</button> <!-- Deep Sky Blue/Cyan -->
+                        <button data-audience="valentines" class="audience-button bg-white text-[#00BFFF] py-2 px-4 rounded-full text-sm font-semibold border border-[#00BFFF] hover:bg-gray-100">Seasonal Consumers</button> <!-- Deep Sky Blue/Cyan -->
                     </div>
                 </div>
                 <div class="md:col-span-2 grid sm:grid-cols-2 md:grid-cols-1 gap-8">
@@ -158,65 +204,8 @@
             </div>
         </section>
 
-        <section id="strategy" class="mb-16 md:mb-24 scroll-mt-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#006491]">Campaign Strategy Pillars</h2>
-            <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">
-               This section details the campaign's strategic foundation, built on four key pillars designed to work in synergy. This integrated approach ensures we engage customers across multiple touchpoints. Use the tabs below to explore each pillar, from interactive digital experiences to high-impact seasonal partnerships.
-            </p>
-            <div class="bg-white rounded-2xl shadow-lg p-2 md:p-4">
-                <div class="flex flex-col sm:flex-row mb-4 border-b border-gray-200">
-                    <button data-tab="digital" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg active">Digital & Swipe Game</button>
-                    <button data-tab="social" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg">Social & UGC</button>
-                    <button data-tab="partnerships" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg">Partnerships</button>
-                    <button data-tab="promotions" class="tab-button flex-1 py-3 px-4 text-center font-semibold text-gray-600 hover:bg-gray-100 transition-colors duration-200 rounded-t-lg">Promotions</button>
-                </div>
-
-                <div class="p-4 md:p-6">
-                    <div id="digital" class="tab-content">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">The 'Pizza Perfect Match' Swipe Game</h3>
-                        <p class="text-gray-600 mb-4">A central, interactive swipe game within the Domino's app will allow users to 'swipe left' (dislike) or 'swipe right' (like) on various pizza ingredients, styles, and combinations. Each swipe builds a deeper understanding of the player's preferences, culminating in a highly personalised custom pizza recommendation – their "perfect match." If the custom suggestion isn't quite right, the game will then offer alternative pizzas from Domino's existing product range, tailored to the player's expressed likes and dislikes. This gamified approach offers a dynamic and intuitive way to discover personalised pizza choices.</p>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Engaging swipe interface for intuitive preference selection.</li>
-                            <li>Learns player preferences over time to refine custom pizza suggestions.</li>
-                            <li>Suggests a custom "perfect match" pizza based on swipe data.</li>
-                            <li>Offers existing Domino's products if custom pizza is not desired.</li>
-                            <li>Drives collection of valuable first-party data on customer preferences.</li>
-                        </ul>
-                    </div>
-                    <div id="social" class="tab-content hidden">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Social Media & User-Generated Content</h3>
-                        <p class="text-gray-600 mb-4">We will leverage Domino's strong presence on TikTok, Instagram, and X with platform-specific content that encourages participation and sharing. The focus is on humour, relatability, and amplifying authentic user content.</p>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li><strong>TikTok:</strong> Branded audio and food challenges (e.g., #MyPizzaMatch).</li>
-                            <li><strong>Instagram:</strong> Visual UGC contests, interactive Stories, and Reels.</li>
-                            <li><strong>X (formerly Twitter):</strong> Real-time engagement with trending topics and humorous commentary.</li>
-                            <li><strong>UGC Amplification:</strong> Promote hashtags and run giveaways to incentivise content creation.</li>
-                        </ul>
-                    </div>
-                    <div id="partnerships" class="tab-content hidden">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Seasonal Integration & Partnerships</h3>
-                        <p class="text-gray-600 mb-4">The campaign will tap into major cultural moments to maximise relevance and reach. We will become part of the conversation, not just an advertiser.</p>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li><strong>Love Island (Summer):</strong> TV idents using the ad concept, real-time social commentary on villa drama, and a "Love Island Pizza Challenge" to engage the show's highly active audience.</li>
-                            <li><strong>Valentine's Day (February):</strong> A dual approach with "Perfect Pair" meal deals for couples and "Self-Love" comfort packs for the singles/anti-Valentine's market, ensuring broad appeal.</li>
-                        </ul>
-                    </div>
-                    <div id="promotions" class="tab-content hidden">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Promotional Offers & Loyalty Integration</h3>
-                        <p class="text-gray-600 mb-4">Tailored promotions will incentivise trial and drive sales, while integration with the Domino's Rewards programme will encourage repeat purchases and build long-term loyalty.</p>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li><strong>"Perfect Match" Meal Deals:</strong> Tiered bundles for individuals, couples, and groups.</li>
-                            <li><strong>Exclusive Discounts:</strong> Special offers for orders placed via the Pizza Perfect Match Swipe Game.</li>
-                            <li><strong>Loyalty Perks:</strong> Double loyalty points on campaign-related orders.</li>
-                            <li><strong>Gamified Offers:</strong> Small, unexpected upsell prompts at checkout like "love at first bite."</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="rollout" class="mb-16 md:mb-24 scroll-mt-20">
-             <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#006491]">Phased Campaign Rollout</h2>
+             <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#FF0099]">Phased Campaign Rollout</h2> <!-- Vibrant Magenta -->
              <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">
                This visual timeline illustrates the campaign's execution plan. A phased approach ensures we build momentum, maximise impact during peak seasons, and sustain engagement over time. Each phase has a distinct focus, allowing for agile adjustments based on performance data.
             </p>
@@ -225,9 +214,9 @@
                     <div class="timeline-dot bg-white rounded-full"></div>
                     <div class="ml-4">
                         <div class="bg-white p-6 rounded-2xl shadow-lg">
-                            <span class="text-sm font-semibold text-[#006491] bg-blue-100 py-1 px-3 rounded-full">Phase 1: Pre-Launch Buzz</span>
+                            <span class="text-sm font-semibold text-[#FF0099] bg-pink-100 py-1 px-3 rounded-full">Phase 1: Pre-Launch Buzz</span> <!-- Vibrant Magenta -->
                             <h3 class="text-xl font-bold mt-3 mb-2 text-gray-800">Building Anticipation</h3>
-                            <p class="text-gray-600">The initial phase focuses on introducing the core campaign concept. We'll launch the "She Doesn't Understand Me Like You Do" ad on TV and digital platforms, creating initial awareness. The Pizza Perfect Match Swipe Game will be soft-launched to gather early user data and feedback.</p>
+                            <p class="text-gray-600">The initial phase focuses on introducing the core campaign concept. We'll launch the TV ad on digital platforms. The 'Perfect Match' Swipe Game will be soft-launched to gather early user data and feedback, primarily focusing on data acquisition (for CRM/The Platform use) and CRO.</p>
                         </div>
                     </div>
                 </div>
@@ -235,9 +224,9 @@
                     <div class="timeline-dot bg-white rounded-full"></div>
                     <div class="ml-4">
                         <div class="bg-white p-6 rounded-2xl shadow-lg">
-                            <span class="text-sm font-semibold text-[#E31837] bg-red-100 py-1 px-3 rounded-full">Phase 2: Peak Activation</span>
+                            <span class="text-sm font-semibold text-[#00BFFF] bg-cyan-100 py-1 px-3 rounded-full">Phase 2: Peak Activation</span> <!-- Deep Sky Blue/Cyan -->
                             <h3 class="text-xl font-bold mt-3 mb-2 text-gray-800">Intensified Engagement</h3>
-                            <p class="text-gray-600">During the Love Island season and Valentine's week, we'll amplify all activities. This includes real-time social media activations, deploying seasonal offers, and heavily promoting the swipe game to drive both engagement and sales during these high-relevance periods.</p>
+                            <p class="text-gray-600">During the major TV event season and the Seasonal Romance Day week, we'll amplify all activities. This includes real-time social media activations, deploying seasonal cross-sell offers, and heavily promoting the swipe game to drive both engagement and high AOV sales during these high-relevance periods.</p>
                         </div>
                     </div>
                 </div>
@@ -247,7 +236,7 @@
                         <div class="bg-white p-6 rounded-2xl shadow-lg">
                             <span class="text-sm font-semibold text-gray-600 bg-gray-200 py-1 px-3 rounded-full">Phase 3: Sustained Momentum</span>
                             <h3 class="text-xl font-bold mt-3 mb-2 text-gray-800">Evergreen Engagement</h3>
-                            <p class="text-gray-600">Post-season, the campaign transitions to an evergreen state. The Pizza Perfect Match Swipe Game becomes a permanent feature on the app and website, continuously providing personalised recommendations. Data collected is used for retargeting and enhancing the loyalty programme.</p>
+                            <p class="text-gray-600">Post-season, the campaign transitions to an evergreen state. The Swipe Game becomes a permanent feature on the app, continuously providing personalised deal recommendations. Data collected is used for segmenting, retargeting, and enhancing the Loyalty Programme.</p>
                         </div>
                     </div>
                 </div>
@@ -255,44 +244,43 @@
         </section>
 
         <section id="kpis" class="scroll-mt-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#006491]">Measuring Success: Key Performance Indicators</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#00BFFF]">Measuring Success: Key Performance Indicators</h2> <!-- Deep Sky Blue/Cyan -->
             <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">
-               This final section outlines how we will measure success. We will track a comprehensive set of KPIs across four critical areas. This data-driven approach will allow for continuous optimisation and a clear understanding of our return on investment.
-            </p>
+               This final section outlines how we will measure success. We will track a comprehensive set of KPIs across four critical areas. This data-driven approach will allow for continuous optimisation and a clear understanding of our return on investment, focusing heavily on conversion and sales metrics sought by the Trading (CRO) team.</p>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
                     <h3 class="font-bold text-xl mb-3 text-gray-800">Brand Awareness</h3>
                     <p class="text-gray-600 text-sm mb-4">Gauging our reach and how the campaign is perceived.</p>
                     <div class="space-y-3">
-                        <div class="text-sm"><span>Social Media Mentions</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 20%"></div></div></div>
-                        <div class="text-sm"><span>Website & App Traffic</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 15%"></div></div></div>
+                        <div class="text-sm"><span>Social Media Mentions</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#FF0099] h-2.5 rounded-full" style="width: 20%"></div></div></div> <!-- Vibrant Magenta -->
+                        <div class="text-sm"><span>Website & App Traffic</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#FF0099] h-2.5 rounded-full" style="width: 15%"></div></div></div> <!-- Vibrant Magenta -->
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
                     <h3 class="font-bold text-xl mb-3 text-gray-800">Engagement</h3>
                     <p class="text-gray-600 text-sm mb-4">Measuring how audiences interact with our content.</p>
                      <div class="space-y-3">
-                        <div class="text-sm"><span>Swipe Game Completion Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#E31837] h-2.5 rounded-full" style="width: 60%"></div></div></div>
-                        <div class="text-sm"><span>Social Engagement Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#E31837] h-2.5 rounded-full" style="width: 5%"></div></div></div>
+                        <div class="text-sm"><span>Swipe Game Completion Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#00BFFF] h-2.5 rounded-full" style="width: 60%"></div></div></div> <!-- Deep Sky Blue/Cyan -->
+                        <div class="text-sm"><span>Social Engagement Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#00BFFF] h-2.5 rounded-full" style="width: 5%"></div></div></div> <!-- Deep Sky Blue/Cyan -->
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
                     <h3 class="font-bold text-xl mb-3 text-gray-800">Conversion & Sales</h3>
                     <p class="text-gray-600 text-sm mb-4">Tracking the direct impact on revenue and orders.</p>
                      <div class="space-y-3">
-                        <div class="text-sm"><span>Sales Uplift</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 10%"></div></div></div>
-                        <div class="text-sm"><span>Orders from Game Recommendations</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 5%"></div></div></div>
-                        <div class="text-sm"><span>Deal Redemption Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 25%"></div></div></div>
-                        <div class="text-sm"><span>Increased Average Order Value</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 8%"></div></div></div>
-                        <div class="text-sm"><span>Increased Number of Sides Purchased</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#006491] h-2.5 rounded-full" style="width: 12%"></div></div></div>
+                        <div class="text-sm"><span>Sales Uplift</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#FF0099] h-2.5 rounded-full" style="width: 10%"></div></div></div> <!-- Vibrant Magenta -->
+                        <div class="text-sm"><span>Orders from Game Recommendations</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#FF0099] h-2.5 rounded-full" style="width: 5%"></div></div></div> <!-- Vibrant Magenta -->
+                        <div class="text-sm"><span>Deal Redemption Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#FF0099] h-2.5 rounded-full" style="width: 25%"></div></div></div> <!-- Vibrant Magenta -->
+                        <div class="text-sm"><span>Increased Average Order Value</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#FF0099] h-2.5 rounded-full" style="width: 8%"></div></div></div> <!-- Vibrant Magenta -->
+                        <div class="text-sm"><span>Increased Number of Sides Purchased</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#FF0099] h-2.5 rounded-full" style="width: 12%"></div></div></div> <!-- Vibrant Magenta -->
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
                     <h3 class="font-bold text-xl mb-3 text-gray-800">Loyalty</h3>
                     <p class="text-gray-600 text-sm mb-4">Assessing the long-term impact on customer retention.</p>
                      <div class="space-y-3">
-                        <div class="text-sm"><span>Rewards Enrolment</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#E31837] h-2.5 rounded-full" style="width: 5%"></div></div></div>
-                        <div class="text-sm"><span>Repeat Purchase Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#E31837] h-2.5 rounded-full" style="width: 3%"></div></div></div>
+                        <div class="text-sm"><span>Rewards Enrolment</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#00BFFF] h-2.5 rounded-full" style="width: 5%"></div></div></div> <!-- Deep Sky Blue/Cyan -->
+                        <div class="text-sm"><span>Repeat Purchase Rate</span><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-[#00BFFF] h-2.5 rounded-full" style="width: 3%"></div></div></div> <!-- Deep Sky Blue/Cyan -->
                     </div>
                 </div>
             </div>
@@ -302,7 +290,7 @@
 
     <footer class="bg-gray-800 text-white mt-16">
         <div class="container mx-auto px-6 py-4 text-center text-sm">
-            <p>&copy; 2024 "Find Your Perfect Match" Campaign Plan. For illustrative purposes only.</p>
+            <p>&copy; 2024 "Find Your Perfect Match" Campaign Concept. For illustrative purposes only.</p>
         </div>
     </footer>
 
@@ -312,16 +300,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const audienceData = {
         core: {
-            title: "Domino's Core UK Audience",
+            title: "QSR Core UK Audience",
             description: `<p>The primary target consists of digital natives aged 18-34 who value convenience, speed, and satisfying meal options. UK-specific data reveals a significant male majority (79.8%), making the proposed ad's male protagonist highly relatable. They are often habitual buyers or impulse purchasers driven by app notifications and discounts.</p>`
         },
         loveisland: {
-            title: "Love Island Viewers",
-            description: `<p>This audience consists mainly of young women (16-34) who are highly engaged with social media and pop culture. They are interested in relationships, beauty, and celebrities. The "perfect match" theme aligns perfectly with the show's premise, creating a huge opportunity to engage this demographic through digital-first, humorous content that feels native to the Love Island ecosystem.</p>`
+            title: "Major TV Viewers",
+            description: `<p>This audience consists mainly of young women (16-34) who are highly engaged with social media and pop culture. They are interested in entertainment and trending topics. The "perfect match" theme aligns perfectly with major TV relationship programming, creating a huge opportunity to engage this demographic through digital-first, humorous content.</p>`
         },
         valentines: {
-            title: "Valentine's Day Consumers",
-            description: `<p>A broad audience seeking special meal occasions. This includes not only romantic couples looking for "Perfect Pair" deals but also a significant market for singles and "Anti-Valentine's" celebrations. Our dual approach with both couples' deals and "Self-Love" packs ensures we can cater to everyone during this key commercial period.</p>`
+            title: "Seasonal Consumers",
+            description: `<p>A broad audience seeking special meal occasions. This includes not only romantic couples looking for "Perfect Pair" deals but also a significant market for singles and "Anti-Valentine's" celebrations. Our dual approach ensures we can cater to everyone during this key commercial period.</p>`
         }
     };
 
@@ -334,12 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const audienceKey = button.dataset.audience;
             
             audienceButtons.forEach(btn => {
-                btn.classList.remove('bg-[#006491]', 'text-white');
-                btn.classList.add('bg-white', 'text-[#006491]');
+                btn.classList.remove('bg-[#00BFFF]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#00BFFF]');
             });
             
-            button.classList.add('bg-[#006491]', 'text-white');
-            button.classList.remove('bg-white', 'text-[#006491]');
+            button.classList.add('bg-[#00BFFF]', 'text-white');
+            button.classList.remove('bg-white', 'text-[#00BFFF]');
 
             audienceTitle.textContent = audienceData[audienceKey].title;
             audienceDescription.innerHTML = audienceData[audienceKey].description;
@@ -399,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             labels: ['Male', 'Female'],
             datasets: [{
                 data: [79.8, 20.2],
-                backgroundColor: ['#006491', '#E31837'],
+                backgroundColor: ['#FF0099', '#00BFFF'], /* Vibrant Magenta, Deep Sky Blue/Cyan */
                 borderColor: '#F7F5F2',
                 borderWidth: 4
             }]
@@ -436,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
             datasets: [{
                 label: '% of Customers',
                 data: [15.6, 61.1, 15.0, 8.3],
-                backgroundColor: ['#006491', '#E31837', '#007eb1', '#f35d7a'],
+                backgroundColor: ['#FF0099', '#00BFFF', '#FF4DAB', '#4DCFFF'], /* Vibrant Magenta, Deep Sky Blue/Cyan and light shades */
                 borderRadius: 4
             }]
         },
@@ -447,13 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
             plugins: {
                 legend: {
                     display: false
-                },
-                 tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return ` ${context.raw}%`;
-                        }
-                    }
                 }
             },
             scales: {
@@ -482,12 +463,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Storyboard Carousel Logic
     const storyboardData = [
-        { img: 'images/storyboard_1.jpg', desc: "A man sits on his sofa, pizza on the coffee table. He's about to take a bite." },
-        { img: 'images/storyboard_2.jpg', desc: "He turns lovingly to the pizza box beside him." },
+        { img: 'images/storyboard_1.jpg', desc: "A man sits on his sofa, meal on the coffee table. He's about to take a bite." },
+        { img: 'images/storyboard_2.jpg', desc: "He turns lovingly to the QSR meal box beside him." },
         { img: 'images/storyboard_3.jpg', desc: "He sighs, \"She doesn't understand me like you do.\"" },
         { img: 'images/storyboard_4.jpg', desc: "His wife walks in. \"What's going on here?\" she asks, suspicious." },
         { img: 'images/storyboard_5.jpg', desc: "He panics, leaps over the sofa, and runs to her." },
-        { img: 'images/storyboard_6.jpg', desc: "\"It's not what it looks like!\" he exclaims. Cue the Domino's jingle." }
+        { img: 'images/storyboard_6.jpg', desc: "\"It's not what it looks like!\" he exclaims. Cue the QSR jingle." }
     ];
 
     let currentStoryboardIndex = 0;
@@ -498,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const storyboardDotsContainer = document.getElementById('storyboard-dots'); 
 
     function updateStoryboard() {
-        // Construct the full image URL using the contentFetchId format
+        // NOTE: These paths assume you have uploaded files named storyboard_X.jpg into an 'images' folder in your GitHub repo.
         storyboardImage.src = storyboardData[currentStoryboardIndex].img;
         storyboardDescription.textContent = storyboardData[currentStoryboardIndex].desc;
         updateDots();
@@ -520,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dot = document.createElement('span');
             dot.classList.add('w-3', 'h-3', 'rounded-full', 'cursor-pointer', 'mx-1');
             if (index === currentStoryboardIndex) {
-                dot.classList.add('bg-[#006491]'); // Active dot color
+                dot.classList.add('bg-[#FF0099]'); // Active dot color (Vibrant Magenta)
             } else {
                 dot.classList.add('bg-gray-400'); // Inactive dot color
             }
@@ -558,6 +539,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 </script>
-
 </body>
-</ht
+</html>
